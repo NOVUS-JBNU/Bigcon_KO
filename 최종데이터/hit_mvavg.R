@@ -19,15 +19,15 @@ hit_WO <- th%>%filter(T_ID=="WO")%>%select(GDAY_DS,BA)
 
 #기존데이터와 수집데이터 병합
 hit_HH <- rbind(hit_HH,read.csv("hitHH.csv"))
-hit_HT <- rbind(hit_HH,read.csv("hitHT.csv"))
-hit_KT <- rbind(hit_HH,read.csv("hitKT.csv"))
-hit_LG <- rbind(hit_HH,read.csv("hitLG.csv"))
-hit_LT <- rbind(hit_HH,read.csv("hitLT.csv"))
-hit_NC <- rbind(hit_HH,read.csv("hitNC.csv"))
-hit_OB <- rbind(hit_HH,read.csv("hitOB.csv"))
-hit_SK <- rbind(hit_HH,read.csv("hitSK.csv"))
-hit_SS <- rbind(hit_HH,read.csv("hitSS.csv"))
-hit_WO <- rbind(hit_HH,read.csv("hitWO.csv"))
+hit_HT <- rbind(hit_HT,read.csv("hitHT.csv"))
+hit_KT <- rbind(hit_KT,read.csv("hitKT.csv"))
+hit_LG <- rbind(hit_LG,read.csv("hitLG.csv"))
+hit_LT <- rbind(hit_LT,read.csv("hitLT.csv"))
+hit_NC <- rbind(hit_NC,read.csv("hitNC.csv"))
+hit_OB <- rbind(hit_OB,read.csv("hitOB.csv"))
+hit_SK <- rbind(hit_SK,read.csv("hitSK.csv"))
+hit_SS <- rbind(hit_SS,read.csv("hitSS.csv"))
+hit_WO <- rbind(hit_WO,read.csv("hitWO.csv"))
 
 
 hit_HH[,2] <- round(movavg(hit_HH[,2],n=18),digits=3 ) #BA열 이동평균하고 소숫점 3자리까지만 출력
