@@ -3,7 +3,7 @@ library(pracma)
 
 hit <- read.csv("2020빅콘테스트_스포츠투아이_제공데이터_팀투수_2020.csv")
 
-th <- hit%>%mutate(BA = (HIT+H2+H3+HR)/AB)%>%select(GDAY_DS,T_ID,BA) #타율열 생성 및 날짜, 팀이름, 타율 열만 추출
+th <- hit%>%mutate(BA = (HIT)/AB)%>%select(GDAY_DS,T_ID=VS_T_ID,BA) #타율열 생성 및 날짜, 팀이름, 타율 열만 추출
 th$GDAY_DS <- as.Date(as.character(th$GDAY_DS),"%Y%m%d")#날짜열 표준화
 
 hit_HH <- th%>%filter(T_ID=="HH")%>%select(GDAY_DS,BA) # 팀별 추출
